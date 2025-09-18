@@ -7,26 +7,26 @@ load_dotenv()
 id_pattern = re.compile(r'^.\d+$')
 
 class Config(object):
-    API_ID = int(getenv("API_ID", "0"))
-    API_HASH = getenv("API_HASH", "")
-    BOT_TOKEN = getenv("BOT_TOKEN", "")
+    API_ID = int(getenv("API_ID", "22606849"))
+    API_HASH = getenv("API_HASH", "8061812928:AAGfgC6U8p_2KMc6dwBVXOS121vZCNXsv4M")
+    BOT_TOKEN = getenv("BOT_TOKEN", "8364423119:AAF0kC0QSRc_uiLGu7ybwagXRcepPEnR7CY")
     BOT_WORKERS = int(getenv("BOT_WORKERS", "4"))
     
     # Webhook settings
     WEB_MODE = getenv("WEB_MODE", "False").lower() in ("true", "1", "yes")
     PORT = int(getenv("PORT", "8080"))  # default port for web services
     
-    CHANNEL_ID = int(getenv("CHANNEL_ID", ""))
-    OWNER_ID = int(getenv("OWNER_ID", ""))
+    CHANNEL_ID = int(getenv("CHANNEL_ID", "-1002134572304"))
+    OWNER_ID = int(getenv("OWNER_ID", "6440021089"))
 
     # Database
-    DATABASE_URL = getenv("DATABASE_URL", "")
-    DATABASE_NAME = getenv("DATABASE_NAME", "Cluster0")
+    DATABASE_URL = getenv("DATABASE_URL", "mongodb+srv://meow:meow@meow.a6bo1.mongodb.net/?retryWrites=true&w=majority&appName=meow")
+    DATABASE_NAME = getenv("DATABASE_NAME", "Clust07")
 
     # Force subscription
     #FORCE_SUB_CHANNEL = int(getenv("FORCE_SUB_CHANNEL", "0"))   
-    FORCE_SUB_CHANNEL = list(set(int(ch) for ch in getenv("FORCE_SUB_CHANNEL", "").split() if id_pattern.fullmatch(ch)))
-    JOIN_REQUEST_ENABLE = getenv("JOIN_REQUEST_ENABLED", None)
+    FORCE_SUB_CHANNEL = list(set(int(ch) for ch in getenv("FORCE_SUB_CHANNEL", "-1003075986369").split() if id_pattern.fullmatch(ch)))
+    JOIN_REQUEST_ENABLE = getenv("JOIN_REQUEST_ENABLED", -1003047753136)
 
     # Messages
     START_PIC = getenv("START_PIC", "")
@@ -35,7 +35,7 @@ class Config(object):
     CUSTOM_CAPTION = getenv("CUSTOM_CAPTION", None)
 
     # ✅ Secure ADMINS (only numeric IDs)
-    admins = getenv("ADMINS", "").split()
+    admins = getenv("ADMINS", "6440021089").split()
     ADMINS = list(set(
         [int(x) for x in admins if x.isdigit()] + [OWNER_ID]
     ))
@@ -49,7 +49,7 @@ class Config(object):
     AUTO_DEL_SUCCESS_MSG = getenv("AUTO_DEL_SUCCESS_MSG", "✅ File deleted successfully.")
 
     # Token Verification (Shortlink)
-    VERIFY_MODE = getenv("VERIFY_MODE", "True").lower() in ("true", "1", "yes")
+    VERIFY_MODE = getenv("VERIFY_MODE", "False").lower() in ("true", "1", "yes")
     SHORTLINK_API = getenv("SHORTLINK_API", "")
     SHORTLINK_URL = getenv("SHORTLINK_URL", "")
     TOKEN_EXPIRE = int(getenv("TOKEN_EXPIRE", "21600"))  # default: 6 hours
