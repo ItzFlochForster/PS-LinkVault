@@ -8,7 +8,7 @@ id_pattern = re.compile(r'^.\d+$')
 
 class Config(object):
     API_ID = int(getenv("API_ID", "22606849"))
-    API_HASH = getenv("API_HASH", "8061812928:AAGfgC6U8p_2KMc6dwBVXOS121vZCNXsv4M")
+    API_HASH = getenv("API_HASH", "ef85493cd32eadcb5309b5957d8d1b86")
     BOT_TOKEN = getenv("BOT_TOKEN", "8364423119:AAF0kC0QSRc_uiLGu7ybwagXRcepPEnR7CY")
     BOT_WORKERS = int(getenv("BOT_WORKERS", "4"))
     
